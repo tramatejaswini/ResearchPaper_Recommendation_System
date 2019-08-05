@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Research Paper</title>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <!-- <link rel="stylesheet" href="/Users/pranzsmac/Desktop/Research-Paper-Recommendation/static/css/style.css">
+     -->
+
+    <style>
+        .my-custom-scrollbar {
+        position: relative;
+        height: 200px;
+        overflow: auto;
+        }
+        .table-wrapper-scroll-y {
+        display: block;
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+
+ <div class="login">
+	<h1>Research Paper Recommendation</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <div>
+        <form action="{{ url_for('predict')}}" method="post">
+
+            <div class="form-group">
+                <input type="text" name="experience" class="form-control" placeholder="Research paper title or keywords" required="required" />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Get Recommendations</button>
+        </form>
+    </div>
+<h1>Result KNN</h1>
+   <br>
+   <br>
+          <form action="{{ url_for('database')}}"  method="post">
+            <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                <table class="table table-bordered table-striped mb-0">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Reseach Papaer Title</th>
+                            <th>Rate the Recommendation </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%for key in result_knn %}
+
+                        <tr>
+                            <td>  {{ loop.index }}</td>
+                           <td> {{ key }} </td>
+                            <td>
+                                <select name="Rating">
+                                <option value="One">1</option>
+                                <option value="two">2</option>
+                                <option value="three">3</option>
+                                <option value="four">4</option>
+                                <option value="five">5</option>
+                                </select>
+                            </td>
+                        </tr>
+
+                     {% endfor %}
+                    </tbody>
+
+                </table>
+            </div>
+            <input type="submit" value="Submit">
+            </form>
+<h1>Result tfidf</h1>
+<br>
+   <br>
+          <form action="{{ url_for('database')}}"  method="post">
+            <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                <table class="table table-bordered table-striped mb-0">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Reseach Papaer Title</th>
+                            <th>Rate the Recommendation </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%for key in result_tfidf %}
+
+                        <tr>
+                            <td>  {{ loop.index }}</td>
+                           <td> {{ key }} </td>
+                            <td>
+                                <select name="Rating">
+                                <option value="One">1</option>
+                                <option value="two">2</option>
+                                <option value="three">3</option>
+                                <option value="four">4</option>
+                                <option value="five">5</option>
+                                </select>
+                            </td>
+                        </tr>
+
+                     {% endfor %}
+                    </tbody>
+
+                </table>
+            </div>
+            <input type="submit" value="Submit">
+            </form>
+<h1>Result word-vector</h1>
+<br>
+   <br>
+          <form action="{{ url_for('database')}}"  method="post">
+            <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                <table class="table table-bordered table-striped mb-0">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Reseach Papaer Title</th>
+                            <th>Rate the Recommendation </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%for key in result_word %}
+
+                        <tr>
+                            <td>  {{ loop.index }}</td>
+                           <td> {{ key }} </td>
+                            <td>
+                                <select name="Rating">
+                                <option value="One">1</option>
+                                <option value="two">2</option>
+                                <option value="three">3</option>
+                                <option value="four">4</option>
+                                <option value="five">5</option>
+                                </select>
+                            </td>
+                        </tr>
+
+                     {% endfor %}
+                    </tbody>
+
+                </table>
+            </div>
+            <input type="submit" value="Submit">
+            </form>
+<h1>Result collaborative</h1>
+
+<br>
+   <br>
+          <form action="{{ url_for('database')}}"  method="post">
+            <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                <table class="table table-bordered table-striped mb-0">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Reseach Papaer Title</th>
+                            <th>Rate the Recommendation </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%for key in result_collaborative %}
+
+                        <tr>
+                            <td>  {{ loop.index }}</td>
+                           <td> {{ key }} </td>
+                            <td>
+                                <select name="Rating">
+                                <option value="One">1</option>
+                                <option value="two">2</option>
+                                <option value="three">3</option>
+                                <option value="four">4</option>
+                                <option value="five">5</option>
+                                </select>
+                            </td>
+                        </tr>
+
+                     {% endfor %}
+                    </tbody>
+
+                </table>
+            </div>
+            <input type="submit" value="Submit">
+            </form>
+ </div>
+
+
+
+
+</body>
+</html>
