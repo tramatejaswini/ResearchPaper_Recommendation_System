@@ -1,7 +1,8 @@
 ## Research Paper Recommendation System
 
 ## Objective:
-	Researchers find it difficult to access and keep track of the most relevant and promising research papers of their interest. The known approach to get research papers is to follow the list of references from the documents they already possessed Even though this approach might be quite effective in some instances, it does not guarantee full coverage of recommending research papers and cannot trace papers published after the possessed paper.In this project, a pipelined hybrid based approach for research paper recommender system is developed where users will be provided with top most recommendation with high accuracy. 
+
+Researchers find it difficult to access and keep track of the most relevant and promising research papers of their interest. The known approach to get research papers is to follow the list of references from the documents they already possessed Even though this approach might be quite effective in some instances, it does not guarantee full coverage of recommending research papers and cannot trace papers published after the possessed paper.In this project, a pipelined hybrid based approach for research paper recommender system is developed where users will be provided with top most recommendation with high accuracy. 
 
 ### Prerequisites
 You must have Scikit Learn, Pandas (for Machine Leraning Model) and Flask (for API) installed.
@@ -12,7 +13,7 @@ We have scraped the research papers a dataset from ww.ieee.org, where we have ti
 
 ## Data Preprocessing:
 
-	The fields ‘paper authors’ , ‘citation number’, ‘paper venue’ ,’published year’ are dropped from the csv file.
+The fields ‘paper authors’ , ‘citation number’, ‘paper venue’ ,’published year’ are dropped from the csv file.
 Removing the records, which do not have title
 Replacing the records’ null abstract with title where there is no abstract
 The extracted text is cleaned such that only english words are contained in the csv file.
@@ -20,7 +21,7 @@ In order to maintain 3 characteristics volume, velocity and variety of the data,
 
 ## Analysis and Methodology of project:
 	
-	This project is implemenpelined hybrid approach where the output of content based implementation is provided to collaborative filtering implementation as input.
+This project is implemenpelined hybrid approach where the output of content based implementation is provided to collaborative filtering implementation as input.
 To overcome all the limitations of the above mentioned approaches and as we have a large set of data, we are using the below mentioned models with features like title and abstract, References, Citations and Author.
 
 Content Based
