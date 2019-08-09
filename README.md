@@ -1,5 +1,7 @@
 ## Research Paper Recommendation System
-Researchers find it difficult to access and keep track of the most relevant and promising research papers of their interest. The known approach to get research papers is to follow the list of references from the documents they already possessed Even though this approach might be quite effective in some instances, it does not guarantee full coverage of recommending research papers and cannot trace papers published after the possessed paper.In this project, a pipelined hybrid based approach for research paper recommender system is developed where users will be provided with top most recommendation with high accuracy. 
+
+## Objective:
+	Researchers find it difficult to access and keep track of the most relevant and promising research papers of their interest. The known approach to get research papers is to follow the list of references from the documents they already possessed Even though this approach might be quite effective in some instances, it does not guarantee full coverage of recommending research papers and cannot trace papers published after the possessed paper.In this project, a pipelined hybrid based approach for research paper recommender system is developed where users will be provided with top most recommendation with high accuracy. 
 
 ### Prerequisites
 You must have Scikit Learn, Pandas (for Machine Leraning Model) and Flask (for API) installed.
@@ -9,17 +11,16 @@ You must have Scikit Learn, Pandas (for Machine Leraning Model) and Flask (for A
 We have scraped the research papers a dataset from ww.ieee.org, where we have titles, abstract, authors, url’s of the papers, references, citations and keywords of the paper. This web scraping is done using the beautiful soup and html parser framework. Firstly , we have downloaded all the html pages with the required information, and from those html pages we have inspected the class and id of the tables containing the required information. This information is retrieved using find_all API and saved into CSV files.
 
 ## Data Preprocessing:
- 
-Data preprocessing is a data mining technique that transforms raw data into an understandable format. Real-world data will be inconsistent, incomplete and/or lacking in certain behaviors or trends, and is likely to contain many errors, as users will provide implicit and explicit feedbacks. Data preprocessing is a method of resolving such issues and get the data, which is used to train the algorithms for prediction and recommendations. In our dataset, we have removed the null rows of the data 
 
-The fields ‘paper authors’ , ‘citation number’, ‘paper venue’ ,’published year’ are dropped from the csv file.
+	The fields ‘paper authors’ , ‘citation number’, ‘paper venue’ ,’published year’ are dropped from the csv file.
 Removing the records, which do not have title
 Replacing the records’ null abstract with title where there is no abstract
 The extracted text is cleaned such that only english words are contained in the csv file.
 In order to maintain 3 characteristics volume, velocity and variety of the data, we have done these data processing steps. After preprocessing the data looks like.
 
 ## Analysis and Methodology of project:
-	This project is implemented using the pipelined hybrid approach where the output of content based implementation is provided to collaborative filtering implementation as input. 
+	
+	This project is implemenpelined hybrid approach where the output of content based implementation is provided to collaborative filtering implementation as input.
 To overcome all the limitations of the above mentioned approaches and as we have a large set of data, we are using the below mentioned models with features like title and abstract, References, Citations and Author.
 
 Content Based
