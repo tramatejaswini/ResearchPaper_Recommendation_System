@@ -58,13 +58,8 @@ By default, flask will run on port 5000.
 You should be able to view the homepage as below :
 ![alt text](Images/Home.jpeg)
 
-Enter valid numerical values in all 3 input boxes and hit Predict.
+click on the Recommendation System tab, Then you will get a page with search box and Get recommendations as below.
 
-If everything goes well, you should  be able to see the predcited salary vaule on the HTML page!
-![alt text](http://www.thepythonblog.com/wp-content/uploads/2019/02/Result.png)
+![alt text](Images/Result.jpeg)
 
-4. You can also send direct POST requests to FLask API using Python's inbuilt request module
-Run the beow command to send the request with some pre-popuated values -
-```
-python request.py
-```
+User can also provide ratings for each and every Article and submit the ratings. The mean of all these ratings will give the efficiency of the model.
