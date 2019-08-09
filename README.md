@@ -58,19 +58,19 @@ By default, flask will run on port 5000.
 You should be able to view the homepage as below :
 ![alt text](Images/Home.jpeg)
 
-![alt text](Images/Home2.jpeg)
+![alt text](Images/Home2.png)
 
 click on the Recommendation System tab, Then you will get a page with search box and Get recommendations as below.
-![alt text](Images/input.jpeg)
+![alt text](Images/input.png)
 
 Result:
 
-![alt text](Images/output1.jpeg)
+![alt text](Images/output1.png)
 
-![alt text](Images/output2.jpeg)
+![alt text](Images/output2.png)
 
 User can also provide ratings for each and every Article and submit the ratings. The mean of all these ratings will give the efficiency of the model.
 
-![alt text](Images/rating.jpeg)
+![alt text](Images/rating.png)
 
 
