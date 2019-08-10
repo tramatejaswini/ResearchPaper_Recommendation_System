@@ -58,8 +58,10 @@ By default, flask will run on port 5000.
 ## Supported documents link for the application:
 
 This application is deployed in Amazon AWS. link : http://ec2-54-71-205-30.us-west-2.compute.amazonaws.com/
+
 Two Demo videos 
 Presentation demo: https://youtu.be/Ra8Y6hcaJKc
+
 Web Application demo: https://youtu.be/PKIZtyGzR3I
 
 You should be able to view the homepage as below :
